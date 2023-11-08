@@ -1,10 +1,10 @@
-import Book from "./Book";
-import "../Book.css";
+import Anime from "./Anime";
+import "../Anime.css";
 
-function BookList(props) {
-  let lstBooksRendered = props.elements.map((element) => {
+function AnimeList(props) {
+  let lstAnimesRendered = props.elements.map((element) => {
     return (
-      <Book
+      <Anime
         key={element.id}
         value={element}
         fnAddFavorites={props.fnAddFavorites}
@@ -12,7 +12,7 @@ function BookList(props) {
     );
   });
 
-  return <div className="card-grid-container">{lstBooksRendered}</div>;
+  return <div className="card-grid-container">{lstAnimesRendered}</div>;
 }
 
-export default BookList;
+export default AnimeList;

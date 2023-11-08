@@ -1,7 +1,7 @@
 import BookList from "./components/ListBooks";
 import Navbar from "./components/Navbar";
 import ListFavorites from "./components/ListFavorites";
-import dataBook from "./data/books";
+import dataBook from "./data/Animes";
 import "./App.css";
 
 import { useState } from "react";
