@@ -15,7 +15,7 @@ function Favorite(props) {
         </small>
       </div>
       <button
-        onClick={() => props.fnRemoveBookFromFavorites(props.value)}
+        onClick={() => props.fnRemoveAnimeFromFavorites(props.value)}
         className="btn btn-danger"
       >
         Remove

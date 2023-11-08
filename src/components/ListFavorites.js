@@ -6,14 +6,14 @@ function ListFavorites(props) {
       <Favorite
         key={element.id}
         value={element}
-        fnRemoveBookFromFavorites={props.fnRemoveBookFromFavorites}
+        fnRemoveAnimeFromFavorites={props.fnRemoveAnimeFromFavorites}
       />
     );
   });
 
   return (
     <div>
-      <h4>Lista Favoritos</h4>
+      <h4>List Favorites</h4>
       {listFavoritesRendered}
     </div>
   );

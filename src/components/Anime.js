@@ -1,5 +1,5 @@
 import React from "react";
-import "../Anime.css"; // Importa estilos adicionales si es necesario
+import "../Anime.css";
 
 function Anime(props) {
   const cardStyle = {
@@ -7,8 +7,8 @@ function Anime(props) {
   };
 
   const imageStyle = {
-    width: "100%", // Ajusta el ancho de la imagen al 100% de la tarjeta
-    height: "400px", // Fija la altura de la imagen
+    width: "100%",
+    height: "400px",
   };
 
   return (

@@ -1,4 +1,4 @@
-import BookList from "./components/ListBooks";
+import ListAnimes from "./components/ListAnimes";
 import Navbar from "./components/Navbar";
 import ListFavorites from "./components/ListFavorites";
 import dataBook from "./data/Animes";
@@ -7,30 +7,30 @@ import "./App.css";
 import { useState } from "react";
 
 function App() {
-  const [bookList, setBookList] = useState(dataBook);
-  const [ListFavoriteBooks, setListFavoriteBooks] = useState([]);
+  const [animeList, setAnimeList] = useState(dataBook);
+  const [ListFavoriteAnimes, setListFavoriteAnimes] = useState([]);
   const [notification, setNotification] = useState("");
 
-  function addBookToFavorite(element) {
+  function addAnimeToFavorite(element) {
     // Verificar si el elemento ya está en la lista de favoritos
-    if (ListFavoriteBooks.find((book) => book.id === element.id)) {
-      console.log("El libro ya está en favoritos.");
-      setNotification("El libro ya está en favoritos.");
+    if (ListFavoriteAnimes.find((anime) => anime.id === element.id)) {
+      console.log("El Anime ya está en favoritos.");
+      setNotification("El Anime ya está en favoritos.");
       return;
     }
 
     // Si no está en la lista, agrégalo a la lista de favoritos
-    let tempBookList = [...ListFavoriteBooks];
-    tempBookList.push(element);
-    setListFavoriteBooks(tempBookList);
-    setNotification("Libro agregado a favoritos.");
+    let tempAnimeList = [...ListFavoriteAnimes];
+    tempAnimeList.push(element);
+    setListFavoriteAnimes(tempAnimeList);
+    setNotification("Anime agregado a favoritos.");
   }
 
-  function removeBookFromFavorites(element) {
-    const updatedFavorites = ListFavoriteBooks.filter(
-      (book) => book.id !== element.id
+  function fnRemoveAnimeFromFavorites(element) {
+    const updatedFavorites = ListFavoriteAnimes.filter(
+      (anime) => anime.id !== element.id
     );
-    setListFavoriteBooks(updatedFavorites);
+    setListFavoriteAnimes(updatedFavorites);
   }
 
   return (
@@ -43,19 +43,22 @@ function App() {
             onClick={() => setNotification("")}
             className="btn btn-link btn-sm"
           >
-            Cerrar
+            Close
           </button>
         </div>
       )}
       <div className="container">
         <div className="row">
           <div className="col-md-9">
-            <BookList elements={bookList} fnAddFavorites={addBookToFavorite} />
+            <ListAnimes
+              elements={animeList}
+              fnAddFavorites={addAnimeToFavorite}
+            />
           </div>
           <div className="col-md-3">
             <ListFavorites
-              elements={ListFavoriteBooks}
-              fnRemoveBookFromFavorites={removeBookFromFavorites}
+              elements={ListFavoriteAnimes}
+              fnRemoveAnimeFromFavorites={fnRemoveAnimeFromFavorites}
             />
           </div>
         </div>
